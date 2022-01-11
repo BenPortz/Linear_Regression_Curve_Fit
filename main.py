@@ -119,7 +119,7 @@ else:
   st.latex(r'''
   y=  log(c_0 x)+c_1
   ''')
-  st.Markdown("Using a logarithmic function results in a inaccurate curve fit with this given data. Notice how using a negative c0 value results in no output since the function is undefined.")
+  st.markdown("Using a logarithmic function results in a inaccurate curve fit with this given data. Notice how using a negative c0 value results in no output since the function is undefined.")
 
   #define the type of equation
   c0 = st.slider('Value of constant C0', min_value=-2.0, max_value=10.0, value=2.0, step=.1)
