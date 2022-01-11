@@ -30,7 +30,7 @@ st.image(image)
 
 #name the image array
 image_array = np.array(image)
-image_array.shape
+# image_array.shape
 
 #Extract the data points. In our picture, our data is red so we only extract values that are not black or white. (0,0,0) or (255,255,255)
 st.markdown("Pictures are rendered using their RGB values. If we run the following line we can identify the types of colors that are used to create the above data image. Using these values this app is able to extract the data from the picture above.")
@@ -52,7 +52,7 @@ plt.xlabel('Indepdendent Variable')
 plt.show()
 
 st.subheader("Function Selection")
-st.text("The app needs the user to declare a function type for the given data. Ex. Linear, Cubic, Polynomial, Exponential, or Logarithmic.")
+st.markdown("The app needs the user to declare a function type for the given data. Ex. Linear, Cubic, Polynomial, Exponential, or Logarithmic.")
 st.latex(r''' 
 y=  c_0 x^3 +c_1 x^2+c_2 x+c_3
 ''')
@@ -66,8 +66,7 @@ if option == "Linear":
   st.latex(r'''
   y=  c_0 x+c1
   ''')
-  st.text("In the given example a polynomial function provides the best fit for this data. So")
-  st.text("enter the equation above. ")
+  st.markdown("Using a linear function the app is able to come up with similar predictions regardsless of the initial coefficient guesses. The prediction is very accurate from x = 400 to x = 500 ")
   #define the type of equation
   c0 = st.slider('Value of constant C0', min_value=-10, max_value=10, value=4, step=2)
   c1 = st.slider('Value of constant C1', min_value=-5,max_value=5, value=1, step=1)
@@ -80,8 +79,7 @@ elif option == "Quadratic":
   st.latex(r'''
   y=  c_0 x^2+c_1 x+c_2
   ''')
-  st.text("In the given example a polynomial function provides the best fit for this data. So")
-  st.text("enter the equation above. ")
+  st.markdown("When using a quadratic base function the app again is able to find a similar solution regardsless of the initial coefficient guesses. The prediction is accurate for the given data around x = 300 to x = 400 and x = 500 to x = 550")
   #define the type of equation
   c0 = st.slider('Value of constant C0', min_value=-10, max_value=10, value=2, step=2)
   c1 = st.slider('Value of constant C1', min_value=-1.0,max_value=1.0, value=0.04, step=0.01)
@@ -94,8 +92,7 @@ elif option == "Polynomial":
   st.latex(r'''
   y=  c_0 x^3+c_1 x^2+c_2 x+c_3
   ''')
-  st.text("In the given example a polynomial function provides the best fit for this data. So")
-  st.text("enter the equation above. ")
+  st.markdown("A polynomial function fits the data with high accuracy. The solver is able to use iterative methods to find the accurate data function within the given coefficient guess ranges.")
   #define the type of equation
   c0 = st.slider('Value of constant C0', min_value=-20, max_value=20, value=2, step=2)
   c1 = st.slider('Value of constant C1', min_value=-10,max_value=10, value=1, step=1)
@@ -108,8 +105,7 @@ elif option == "Exponential":
   st.latex(r'''
   y=  c_0 e^{c_1 x}+c_2
   ''')
-  st.text("In the given example a polynomial function provides the best fit for this data. So")
-  st.text("enter the equation above. ")
+  st.markdown("An exponential base function gives interesting results when using different coefficient guesses. Try altering the values to see how the app tries to fit the data when constrained to exponential functions.")
  #define the type of equation
   c0 = st.slider('Value of constant C0', min_value=-10, max_value=10, value=4, step=2)
   c1 = st.slider('Value of constant C1', min_value=-1.0,max_value=1.0, value=0.04, step=0.01)
@@ -123,8 +119,7 @@ else:
   st.latex(r'''
   y=  log(c_0 x)+c_1
   ''')
-  st.text("The Logarithmic function does not seem to have an ideal fit. Notice that choosing")
-  st.text("negative values results in an invalid equation")
+  st.Markdown("Using a logarithmic function results in a inaccurate curve fit with this given data. Notice how using a negative c0 value results in no output since the function is undefined.")
 
   #define the type of equation
   c0 = st.slider('Value of constant C0', min_value=-2.0, max_value=10.0, value=2.0, step=.1)
