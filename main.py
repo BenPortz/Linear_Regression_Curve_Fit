@@ -21,12 +21,6 @@ st.image(image)
 # if uploaded_file is not None:
 #      # To read file as bytes:
 #      uploaded_image = uploaded_file.getvalue()
-# Check the height of image 
-# st.write(image.shape[0])
- # Check the width of image 
-# st.write(image.shape[1])
- # Check the number of channels of the image
-# st.write(image.shape[2])
 
 #name the image array
 image_array = np.array(image)
